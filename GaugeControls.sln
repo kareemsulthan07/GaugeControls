@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaugeControl1", "GaugeControl1\GaugeControl1.csproj", "{A810FF80-518E-4F2D-A882-8797AC0E26D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A810FF80-518E-4F2D-A882-8797AC0E26D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A810FF80-518E-4F2D-A882-8797AC0E26D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A810FF80-518E-4F2D-A882-8797AC0E26D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A810FF80-518E-4F2D-A882-8797AC0E26D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70EAF5CD-3B3F-4C5E-BFC3-B2641EAC8982}
+	EndGlobalSection
+EndGlobal
