@@ -1,0 +1,137 @@
+﻿<Window x:Class="GaugeControl2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GaugeControl2"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="720"
+        Width="750"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="backgroundColorBrush" Color="#ededed"/>
+        <SolidColorBrush x:Key="fillColorBrush" Color="#683ab7"/>
+    </Window.Resources>
+
+    <Grid x:Name="mainGrid">
+        <Canvas x:Name="mainCanvas" Margin="50">
+            <Path x:Name="backgroundPath"
+                  Fill="{StaticResource backgroundColorBrush}" 
+                  RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="0"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigureCollection>
+                                <PathFigure StartPoint="0,300" 
+                                            IsClosed="False">
+                                    <PathFigure.Segments>
+                                        <PathSegmentCollection>
+                                            <ArcSegment Size="50,50"
+                                                        RotationAngle="0" 
+                                                        IsLargeArc="False" 
+                                                        SweepDirection="Clockwise" 
+                                                        Point="600,300" />
+
+                                            <LineSegment Point="575,300"/>
+
+                                            <ArcSegment Size="50,50"
+                                                        RotationAngle="0"
+                                                        IsLargeArc="False"
+                                                        SweepDirection="Counterclockwise"
+                                                        Point="25,300"/>
+
+                                            <LineSegment Point="0,300"/>
+                                        </PathSegmentCollection>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+
+            <Path x:Name="fillPath"
+                  Fill="{StaticResource fillColorBrush}"
+                  RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform x:Name="fillPathRT"
+                                         Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigureCollection>
+                                <PathFigure StartPoint="0,300" 
+                                            IsClosed="False">
+                                    <PathFigure.Segments>
+                                        <PathSegmentCollection>
+                                            <ArcSegment Size="50,50"
+                                                        RotationAngle="0" 
+                                                        IsLargeArc="False" 
+                                                        SweepDirection="Counterclockwise" 
+                                                        Point="600,300" />
+
+                                            <LineSegment Point="575,300"/>
+
+                                            <ArcSegment Size="50,50"
+                                                        RotationAngle="0" 
+                                                        IsLargeArc="False" 
+                                                        SweepDirection="Clockwise" 
+                                                        Point="25,300" />
+
+                                            <LineSegment Point="0,300"/>
+                                        </PathSegmentCollection>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+
+            <Rectangle x:Name="coverRectangle"
+                       Fill="White"
+                       Width="610"
+                       Height="305"
+                       Canvas.Left="-5"
+                       Canvas.Top="300"
+                       Visibility="Visible"/>
+
+            <Line x:Name="needleLine"
+                  Stroke="{StaticResource fillColorBrush}"
+                  StrokeThickness="1"
+                  X1="300" Y1="300"
+                  X2="12.5" Y2="300"
+                  Visibility="Collapsed"/>
+
+            <Ellipse x:Name="needleEllipse"
+                     Width="25"
+                     Height="25"
+                     Stroke="{StaticResource fillColorBrush}"
+                     Fill="White"
+                     Canvas.Left="0"
+                     Canvas.Top="287.5"/>
+
+            <Slider x:Name="valueSlider"
+                    Value="0"
+                    Minimum="0"
+                    Maximum="180"
+                    Width="450"
+                    Canvas.Left="80"
+                    Canvas.Top="400"
+                    ValueChanged="valueSlider_ValueChanged"/>
+        </Canvas>
+    </Grid>
+</Window>
